@@ -16,16 +16,21 @@ import androidx.compose.ui.unit.dp
 import com.willmiranda.chat.ui.theme.ChatTheme
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
+         val chat = "Chat"
         super.onCreate(savedInstanceState)
+
         setContent {
             ChatTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.fillMaxSize().height(80.dp),
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .height(80.dp),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+                    AppBar(appBar = chat)
                 }
             }
         }
@@ -42,6 +47,6 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     ChatTheme {
-        Greeting("World")
+        AppBar(appBar = "chat")
     }
 }

@@ -101,10 +101,10 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
 
-    def koin_version = '3.2.2'
+   /* def koin_version = '3.2.2'
 
     implementation "org.koin:koin-android:$koin_version"
     implementation "org.koin:koin-androidx-scope:$koin_version"
     implementation "org.koin:koin-androidx-viewmodel:$koin_version"
-    kapt 'com.android.databinding:compiler:3.1.4'
+    kapt 'com.android.databinding:compiler:3.1.4'*/
 }

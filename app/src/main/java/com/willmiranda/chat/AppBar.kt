@@ -1,34 +1,50 @@
 package com.willmiranda.chat
 
-import android.media.Image
-import androidx.compose.foundation.Image
+
+
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
+import androidx.compose.foundation.Image
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+
 import com.willmiranda.chat.ui.theme.ChatTheme
 
+
 @Composable
-fun AppBar() {
+fun AppBar(appBar :String) {
     Box(modifier = Modifier
         .height(80.dp)
         .fillMaxSize()){
-        Image(painter = painterResource(id = R.color.white),
-            contentDescription = "background app bar search")
+
         
-        TopAppBar (modifier = Modifier.padding(top = 24.dp),
+        TopAppBar (modifier = Modifier.padding(top = 12.dp),
             backgroundColor = Color.Transparent,
             elevation = 0.dp,
+            actions = {
+                Image(
+                painter = painterResource(id = R.drawable.ic_search),
+                contentDescription = "background app bar search"
+            )
+
+            },
             title = {
-                Text(
-                text = "TopAppBarChat",
-                color = Color.White
-                )
+                    Row(horizontalArrangement  =  Arrangement.SpaceBetween) {
+                        Text(
+
+                            text = appBar,
+                            color = Color.Black
+                        )
+                       // Spacer(Modifier.weight(1f))
+
+                    }
             },
         )
 
@@ -37,5 +53,6 @@ fun AppBar() {
 @Preview
 @Composable
 fun AppBarPreview(){
-    AppBar()
-}
+    ChatTheme {
+   AppBar("Search")
+}}
