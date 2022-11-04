@@ -20,9 +20,10 @@ import com.willmiranda.chat.ui.theme.ChatTheme
 
 @Composable
 fun AppBar(appBar :String) {
-    Box(modifier = Modifier
-        .height(80.dp)
-        .fillMaxSize()){
+    Column(modifier = Modifier
+        .height(150.dp)
+        .fillMaxSize()
+        ){
 
         
         TopAppBar (modifier = Modifier.padding(top = 12.dp),
@@ -31,14 +32,13 @@ fun AppBar(appBar :String) {
             actions = {
                 Image(
                 painter = painterResource(id = R.drawable.ic_search),
-                contentDescription = "background app bar search"
+                contentDescription = "app bar search"
             )
 
             },
             title = {
                     Row(horizontalArrangement  =  Arrangement.SpaceBetween) {
                         Text(
-
                             text = appBar,
                             color = Color.Black
                         )

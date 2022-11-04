@@ -18,19 +18,16 @@ import com.willmiranda.chat.ui.theme.ChatTheme
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-         val chat = "Chat"
-        super.onCreate(savedInstanceState)
 
+        super.onCreate(savedInstanceState)
+        val chat = "Chat"
         setContent {
             ChatTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .height(80.dp),
                     color = MaterialTheme.colors.background
                 ) {
-                    AppBar(appBar = chat)
+                    ListaContatos()
                 }
             }
         }
@@ -47,6 +44,7 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     ChatTheme {
-        AppBar(appBar = "chat")
+
     }
 }
+
